@@ -1,0 +1,21 @@
+{
+  "name": "playwright-automation-portfolio",
+  "version": "1.0.0",
+  "description": "Playwright test automation framework for UI and API testing",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:ui": "npx playwright test --project=chromium",
+    "test:api": "npx playwright test --project=api",
+    "test:headed": "npx playwright test --project=chromium --headed",
+    "test:debug": "npx playwright test --project=chromium --debug",
+    "report": "npx playwright show-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.2.3"
+  }
+}

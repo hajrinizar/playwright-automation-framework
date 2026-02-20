@@ -7,6 +7,7 @@ import { DynamicLoadingPage } from '../pages/DynamicLoadingPage';
 import { FileUploadPage } from '../pages/FileUploadPage';
 import { FramesPage } from '../pages/FramesPage';
 import { DragAndDropPage } from '../pages/DragAndDropPage';
+import { HoverPage } from '../pages/HoverPage';
 
 interface PageObjects {
   loginPage: LoginPage;
@@ -17,6 +18,7 @@ interface PageObjects {
   fileUploadPage: FileUploadPage;
   framesPage: FramesPage;
   dragAndDropPage: DragAndDropPage;
+  hoverPage: HoverPage;
 }
 
 export const test = base.extend<PageObjects>({
@@ -43,6 +45,9 @@ export const test = base.extend<PageObjects>({
   },
   dragAndDropPage: async ({ page }, use) => {
     await use(new DragAndDropPage(page));
+  },
+  hoverPage: async ({ page }, use) => {
+    await use(new HoverPage(page));
   },
 });
 

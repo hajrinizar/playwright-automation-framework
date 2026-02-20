@@ -4,6 +4,9 @@ import { CheckboxPage } from '../pages/CheckboxPage';
 import { AlertsPage } from '../pages/AlertsPage';
 import { DropdownPage } from '../pages/DropdownPage';
 import { DynamicLoadingPage } from '../pages/DynamicLoadingPage';
+import { FileUploadPage } from '../pages/FileUploadPage';
+import { FramesPage } from '../pages/FramesPage';
+import { DragAndDropPage } from '../pages/DragAndDropPage';
 
 interface PageObjects {
   loginPage: LoginPage;
@@ -11,6 +14,9 @@ interface PageObjects {
   alertsPage: AlertsPage;
   dropdownPage: DropdownPage;
   dynamicLoadingPage: DynamicLoadingPage;
+  fileUploadPage: FileUploadPage;
+  framesPage: FramesPage;
+  dragAndDropPage: DragAndDropPage;
 }
 
 export const test = base.extend<PageObjects>({
@@ -28,6 +34,15 @@ export const test = base.extend<PageObjects>({
   },
   dynamicLoadingPage: async ({ page }, use) => {
     await use(new DynamicLoadingPage(page));
+  },
+  fileUploadPage: async ({ page }, use) => {
+    await use(new FileUploadPage(page));
+  },
+  framesPage: async ({ page }, use) => {
+    await use(new FramesPage(page));
+  },
+  dragAndDropPage: async ({ page }, use) => {
+    await use(new DragAndDropPage(page));
   },
 });
 

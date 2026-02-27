@@ -12,12 +12,13 @@ export default defineConfig({
   reporter: 'html',
 
   use: {
-    baseURL: 'https://the-internet.herokuapp.com',
+    baseURL: process.env.BASE_URL || 'https://the-internet.herokuapp.com',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
   },
 
   projects: [
+    // Persists auth session to .auth/user.json for downstream projects
     {
       name: 'auth-setup',
       testDir: './tests/setup',
@@ -29,9 +30,19 @@ export default defineConfig({
       testDir: './tests/ui',
     },
     {
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] },
+      testDir: './tests/ui',
+    },
+    {
+      name: 'webkit',
+      use: { ...devices['Desktop Safari'] },
+      testDir: './tests/ui',
+    },
+    {
       name: 'api',
       use: {
-        baseURL: 'https://jsonplaceholder.typicode.com',
+        baseURL: process.env.API_BASE_URL || 'https://jsonplaceholder.typicode.com',
       },
       testDir: './tests/api',
     },

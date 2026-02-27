@@ -6,9 +6,14 @@
     "test": "npx playwright test",
     "test:ui": "npx playwright test --project=chromium",
     "test:api": "npx playwright test --project=api",
+    "test:auth": "npx playwright test --project=auth-setup --project=authenticated",
     "test:headed": "npx playwright test --project=chromium --headed",
     "test:debug": "npx playwright test --project=chromium --debug",
-    "report": "npx playwright show-report"
+    "test:chromium": "npx playwright test --project=chromium",
+    "test:firefox": "npx playwright test --project=firefox",
+    "test:webkit": "npx playwright test --project=webkit",
+    "report": "npx playwright show-report",
+    "update-snapshots": "npx playwright test --update-snapshots --project=chromium"
   },
   "keywords": [],
   "author": "",
